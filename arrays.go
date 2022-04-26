@@ -6,7 +6,7 @@ import "fmt"
  * 数组操作
  */
 
- func printArray(arr *[5]int){
+ func printArray(arr []int){
 	 arr[0] = 100
 	for i, v := range arr {
 		fmt.Println(i,v)
@@ -41,8 +41,8 @@ func main() {
 	}
 	fmt.Println(sum)
 
-	printArray(&arr1)
-	printArray(&arr3)
+	printArray(arr1[:])
+	printArray(arr3[:])
 }
 
 
