@@ -47,4 +47,13 @@ func main() {
 	fmt.Printf("s7 = %v len(s7) = %d cap(s7) = %d\n", s7, len(s7), cap(s7))
 	fmt.Printf("s8 = %v len(s8) = %d cap(s8) = %d\n", s8, len(s8), cap(s8))
 
+	arr3 := [...]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	s12 := arr3[:5]
+	s9 := append(s12, 11)
+	s10 := append(s9, 12)
+	s11 := append(s10, 13)
+
+	fmt.Println(s9, s10, s11)
+	fmt.Printf("s12 = %v arr3 = %v\n", s12, arr3)
+
 }
