@@ -31,5 +31,11 @@ func main() {
 	s2= append(s2[:3], s2[4:]... )
 	printSlice(s2)
 
-	
+	front := s2[0]
+	s2 = s2[1:]
+
+	tail := s2[len(s2)-1]
+	s2 = s2[:len(s2)-1]
+	fmt.Println(front,tail)
+	printSlice(s2)
 }
