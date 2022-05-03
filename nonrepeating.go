@@ -8,13 +8,14 @@ import "fmt"
  * LastOccurred[x] 不存在 或者小于 start 时 无需操作
  * LastOccurred[x] >= start 更新 start
  * 更新 LastOccurred[x] 更新 maxLength
+ * 更新 (map)byte->rune 以支持中文 
  */
 func lengthOfNonRepeatingString(s string) int {
-	LastOccurred := make(map[byte]int)
+	LastOccurred := make(map[rune]int)
 	start := 0
 	maxLength := 0
 
-	for i, ch := range []byte(s) {
+	for i, ch := range []rune(s) {
 
 		if Last1, ok := LastOccurred[ch]; ok && Last1 >= start {
 			start = Last1 + 1
@@ -35,4 +36,5 @@ func main() {
 	fmt.Println(lengthOfNonRepeatingString("b"))
 	fmt.Println(lengthOfNonRepeatingString(""))
 	fmt.Println(lengthOfNonRepeatingString("abcderf"))
+	fmt.Println(lengthOfNonRepeatingString("我爱中国"))
 }
